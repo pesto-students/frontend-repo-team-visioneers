@@ -1,0 +1,138 @@
+[
+    {
+      "_id": "60d5ecb5316a9c5b9f54d9e1",
+      "name": "Alpha",
+      "description": "Workspace for the Alpha team",
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "creatorUserID": "60d5ecb5316a9c5b9f54d9a1",
+      "createdAt": "2023-01-10T10:00:00Z",
+      "updatedAt": "2023-05-15T15:30:00Z",
+      "deactivateAt": null,
+      "isActive": true,
+      "projects": [
+        "60d5ecb5316a9c5b9f54d9b1",
+        "60d5ecb5316a9c5b9f54d9b2"
+      ],
+      "members": [
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9a1",
+          "role": "Admin",
+          "joinedAt": "2023-01-10T10:00:00Z"
+        },
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9a2",
+          "role": "Member",
+          "joinedAt": "2023-01-12T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "_id": "60d5ecb5316a9c5b9f54d9e2",
+      "name": "Beta",
+      "description": "Workspace for the Beta team",
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "creatorUserID": "60d5ecb5316a9c5b9f54d9a3",
+      "createdAt": "2023-02-15T12:00:00Z",
+      "updatedAt": "2023-05-16T16:30:00Z",
+      "deactivateAt": null,
+      "isActive": true,
+      "projects": [
+        "60d5ecb5316a9c5b9f54d9b3",
+        "60d5ecb5316a9c5b9f54d9b4"
+      ],
+      "members": [
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9a3",
+          "role": "Admin",
+          "joinedAt": "2023-02-15T12:00:00Z"
+        },
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9a4",
+          "role": "Member",
+          "joinedAt": "2023-02-16T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "_id": "60d5ecb5316a9c5b9f54d9e3",
+      "name": "Gamma",
+      "description": "Workspace for Gamma development team",
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "creatorUserID": "60d5ecb5316a9c5b9f54d9a5",
+      "createdAt": "2023-03-10T08:00:00Z",
+      "updatedAt": "2023-05-17T17:30:00Z",
+      "deactivateAt": null,
+      "isActive": true,
+      "projects": [
+        "60d5ecb5316a9c5b9f54d9b5",
+        "60d5ecb5316a9c5b9f54d9b6"
+      ],
+      "members": [
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9a5",
+          "role": "Admin",
+          "joinedAt": "2023-03-10T08:00:00Z"
+        },
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9a6",
+          "role": "Member",
+          "joinedAt": "2023-03-11T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "_id": "60d5ecb5316a9c5b9f54d9e4",
+      "name": "Delta",
+      "description": "Workspace for Delta squad",
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "creatorUserID": "60d5ecb5316a9c5b9f54d9a7",
+      "createdAt": "2023-04-20T09:00:00Z",
+      "updatedAt": "2023-05-18T18:30:00Z",
+      "deactivateAt": null,
+      "isActive": true,
+      "projects": [
+        "60d5ecb5316a9c5b9f54d9b7",
+        "60d5ecb5316a9c5b9f54d9b8"
+      ],
+      "members": [
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9a7",
+          "role": "Admin",
+          "joinedAt": "2023-04-20T09:00:00Z"
+        },
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9a8",
+          "role": "Member",
+          "joinedAt": "2023-04-21T10:00:00Z"
+        }
+      ]
+    },
+    {
+      "_id": "60d5ecb5316a9c5b9f54d9e5",
+      "name": "Epsilon",
+      "description": "Workspace for Epsilon initiative",
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "creatorUserID": "60d5ecb5316a9c5b9f54d9a9",
+      "createdAt": "2023-05-01T10:00:00Z",
+      "updatedAt": "2023-05-19T19:30:00Z",
+      "deactivateAt": null,
+      "isActive": true,
+      "projects": [
+        "60d5ecb5316a9c5b9f54d9b9",
+        "60d5ecb5316a9c5b9f54d9ba"
+      ],
+      "members": [
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9a9",
+          "role": "Admin",
+          "joinedAt": "2023-05-01T10:00:00Z"
+        },
+        {
+          "userID": "60d5ecb5316a9c5b9f54d9aa",
+          "role": "Member",
+          "joinedAt": "2023-05-02T11:00:00Z"
+        }
+      ]
+    }
+  ]
+  

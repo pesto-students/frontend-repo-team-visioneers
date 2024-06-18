@@ -1,0 +1,45 @@
+.sidebar {
+  width: 200px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #07357a 0%, #3984f3 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.sidebar .list-item-button:hover {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+/* Change image color to black on hover */
+.sidebar .list-item-button:hover .list-item-img {
+  filter: invert(1);
+}
+
+.list-item-img {
+  width: 25px;
+  transition: filter 0.3s; /* Optional: for a smooth transition */
+}
+
+.list-item-button {
+  transition: background-color 0.3s;
+  /* Optional: for a smooth transition */
+}
+
+.list-item-text {
+  font-size: 1rem;
+}
+
+/* Style for the selected tab */
+.sidebar .list-item-button.selected {
+  background-color: white; /* White background for selected */
+  color: black; /* Black text for selected */
+}
+
+/* Target the image within the selected tab to invert its colors */
+.sidebar .list-item-button.selected .list-item-img {
+  filter: invert(1);
+}

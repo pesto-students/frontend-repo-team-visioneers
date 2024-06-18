@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Project Sunrise",
+    "workspace": "Workspace 1",
+    "img": "https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2149001650.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Project Horizon",
+    "workspace": "Workspace 2",
+    "img": "https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2149001650.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Project Zenith",
+    "workspace": "Workspace 3",
+    "img": "https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2149001650.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Project Nexus",
+    "workspace": "Workspace 4",
+    "img": "https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2149001650.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Project Quasar",
+    "workspace": "Workspace 5",
+    "img": "https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2149001650.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Project Phoenix",
+    "workspace": "Workspace 6",
+    "img": "https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2149001650.jpg"
+  }
+]

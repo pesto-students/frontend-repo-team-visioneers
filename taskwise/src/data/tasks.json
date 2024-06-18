@@ -1,0 +1,163 @@
+[
+    {
+      "Task": "Design feedback on wireframe",
+      "DueDate": "7 Oct",
+      "Priority": "Hard",
+      "Status": "Ongoing",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Review UI elements",
+      "DueDate": "8 Oct",
+      "Priority": "Medium",
+      "Status": "Pending",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Update color scheme",
+      "DueDate": "9 Oct",
+      "Priority": "High",
+      "Status": "Completed",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Finalize typography",
+      "DueDate": "10 Oct",
+      "Priority": "Low",
+      "Status": "Ongoing",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Implement feedback",
+      "DueDate": "11 Oct",
+      "Priority": "High",
+      "Status": "Pending",
+      "Project": "Book App"
+    },
+    {
+      "Task": "User testing",
+      "DueDate": "12 Oct",
+      "Priority": "Medium",
+      "Status": "Ongoing",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Fix bugs",
+      "DueDate": "13 Oct",
+      "Priority": "High",
+      "Status": "Pending",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Optimize performance",
+      "DueDate": "14 Oct",
+      "Priority": "Medium",
+      "Status": "Ongoing",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Create documentation",
+      "DueDate": "15 Oct",
+      "Priority": "Low",
+      "Status": "Pending",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Deploy app",
+      "DueDate": "16 Oct",
+      "Priority": "High",
+      "Status": "Completed",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Monitor app performance",
+      "DueDate": "17 Oct",
+      "Priority": "Medium",
+      "Status": "Ongoing",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Gather user feedback",
+      "DueDate": "18 Oct",
+      "Priority": "High",
+      "Status": "Pending",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Prepare for presentation",
+      "DueDate": "19 Oct",
+      "Priority": "Low",
+      "Status": "Ongoing",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Client meeting",
+      "DueDate": "20 Oct",
+      "Priority": "High",
+      "Status": "Completed",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Refactor code",
+      "DueDate": "21 Oct",
+      "Priority": "Medium",
+      "Status": "Pending",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Update project plan",
+      "DueDate": "22 Oct",
+      "Priority": "Low",
+      "Status": "Ongoing",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Backlog grooming",
+      "DueDate": "23 Oct",
+      "Priority": "Medium",
+      "Status": "Pending",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Sprint planning",
+      "DueDate": "24 Oct",
+      "Priority": "High",
+      "Status": "Ongoing",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Review design patterns",
+      "DueDate": "25 Oct",
+      "Priority": "Low",
+      "Status": "Completed",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Code review",
+      "DueDate": "26 Oct",
+      "Priority": "High",
+      "Status": "Pending",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Update README",
+      "DueDate": "27 Oct",
+      "Priority": "Medium",
+      "Status": "Ongoing",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Check cross-browser compatibility",
+      "DueDate": "28 Oct",
+      "Priority": "High",
+      "Status": "Pending",
+      "Project": "Book App"
+    },
+    {
+      "Task": "Finalize release notes",
+      "DueDate": "29 Oct",
+      "Priority": "Low",
+      "Status": "Completed",
+      "Project": "Book App"
+    }
+  ]

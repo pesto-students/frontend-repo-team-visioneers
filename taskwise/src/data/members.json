@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul Sharma",
+    "role": "Admin",
+    "img": "https://randomuser.me/api/portraits/men/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Priya Singh",
+    "role": "Admin",
+    "img": "https://randomuser.me/api/portraits/women/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Anita Gupta",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/women/3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Vikram Patel",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/men/2.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Amit Verma",
+    "role": "Admin",
+    "img": "https://randomuser.me/api/portraits/men/3.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Neha Mehta",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/women/4.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Meera Nair",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/women/5.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Rohit Kumar",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/men/5.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Rah Sharma",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/men/11.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Priyanka Singh",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/women/12.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Anitam Gupta",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/women/13.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Vikrami Patel",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/men/12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Amita Verma",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/men/13.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Nehal Mehta",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/women/14.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Meerama Nair",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/women/15.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Roha Kumar",
+    "role": "...",
+    "img": "https://randomuser.me/api/portraits/men/15.jpg"
+  }
+]

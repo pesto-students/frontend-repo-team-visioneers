@@ -1,0 +1,57 @@
+.task-card {
+  border: 2px solid transparent; /* Add a thick transparent border */
+  border-color: #00c6ff; /* Apply gradient as border */
+  border-radius: 5; /* Add border radius for rounded corners */
+  margin-bottom: 16px; /* Add spacing between cards */
+  width: 100%;
+  max-width: 100%; /* Fix the card width */
+  height: 250px; /* Fix the card height */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Set position to relative for absolute positioning of icons */
+  transition: box-shadow 0.3s; /* Add transition effect for smooth hover */
+}
+
+.task-card:hover {
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.5),
+    /* Add gradient color for hover shadow */ 0 0 10px rgba(255, 69, 193, 0.5); /* Add gradient color for hover shadow */
+}
+
+.task-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: white;
+}
+
+.task-actions {
+  display: flex;
+}
+
+.task-card-content {
+  flex-grow: 1; /* Allow content to grow within the card */
+  /* padding-top: 40px; Adjust padding to create space for the header */
+}
+
+/* Adjust the card content height based on screen size */
+@media (max-width: 600px) {
+  .task-card-content {
+    max-height: 100px; /* Example adjustment, modify as needed */
+  }
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.task-status {
+  flex-grow: 1;
+  text-align: right;
+}
