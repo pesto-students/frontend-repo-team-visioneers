@@ -40,7 +40,7 @@ function NewTaskPage() {
     const users = membersData?.map(item => item.user);
     const [options] = useState(users);
 
-    console.log(users, "membersdata")
+    //console.log(users, "membersdata")
     //const [options, setOptions] = useState(membersData.map(item => item.user));
     const handleStatusChange = (event) => {
         setStatus(event.target.value);
@@ -133,7 +133,7 @@ function NewTaskPage() {
     const handleCreateTask = async () => {    
         const user = users?.find(user => user.email === assignees);
     
-        console.log(uploadedFileUrls)
+        //console.log(uploadedFileUrls)
         if (validateFields()) {
             const task = {
                 taskName: title,

@@ -16,7 +16,7 @@ function Task({ task, column }) {
       isDragging: !!monitor.isDragging(),
     }),
   });
-  console.log(column, "column task")
+  //console.log(column, "column task")
   let formattedDate;
   if (task?.dueDate) {
     try {

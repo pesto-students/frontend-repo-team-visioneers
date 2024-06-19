@@ -19,7 +19,7 @@ const ColumnDropdown = ({ column, id }) => {
   const order = useSelector((state) => state.project.selectedProject.order);
   const colId = column?._id;
   const colIndex = order?.indexOf(colId);
-  console.log(id,"id")
+  //console.log(id,"id")
 
   const handleMoveLeft = () => {
     if (colIndex > 0) {
