@@ -13,6 +13,7 @@ const CalendarView = () => {
   const events = useSelector((state) => state.workspace.userTasks) || [];
   const userId = useSelector((state) => state?.user?.loggedInUser?.user?._id);
   const [selectedTask, setSelectedTask] = useState(null);
+  // eslint-disable-next-line
   const [selectedDateTasks, setSelectedDateTasks] = useState([]);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
