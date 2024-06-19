@@ -56,8 +56,8 @@ export const fetchWorkspaceByUserIDAsync = createAsyncThunk("workspaces/fetchWor
   return workspaces;
 });
 
-export const fetchTasksByUserIDAsync = createAsyncThunk("workspaces/fetchTasksByUserIDAsync", async ({userId, projectName}) => {
-  const userTasks = await fetchTasksByUserID({userId, projectName});
+export const fetchTasksByUserIDAsync = createAsyncThunk("workspaces/fetchTasksByUserIDAsync", async (userId) => {
+  const userTasks = await fetchTasksByUserID(userId);
   return userTasks;
 });
 

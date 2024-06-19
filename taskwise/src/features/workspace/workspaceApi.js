@@ -9,10 +9,10 @@ export const fetchWorkspaceByUserID=async(userId)=>{
     }
 }
 
-export const fetchTasksByUserID=async({userId, projectName})=>{
+export const fetchTasksByUserID=async(userId)=>{
     try{
-      const response = await axiosi.get(`/workspaces/user/${userId}/tasks?projectName=${projectName || ''}`);
-      return {data: response.data}
+        const res=await axiosi.get(`/workspaces/user/${userId}/tasks`);
+        return {data:res.data}
     }catch(error){
         throw error.response.data
     }
