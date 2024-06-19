@@ -77,8 +77,8 @@ function WorkspaceProjectCard({ workspace, projectData, membersData, isFilter })
                           />
                         </Grid>
                         <Grid item sx={{ paddingTop: 2 }}>
-                          <Typography gutterBottom variant="h6" component="div" sx={{ fontSize: '1rem' }}>
-                            {project.name}
+                          <Typography gutterBottom variant="h6" component="div" sx={{ fontSize: '1rem', wordWrap: 'break-word' }}>
+                              {project.name}
                           </Typography>
                         </Grid>
                       </Grid>
