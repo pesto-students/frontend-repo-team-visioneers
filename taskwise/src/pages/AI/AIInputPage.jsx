@@ -67,7 +67,7 @@ const AIInputPage = () => {
     if (validate()) {
       setLoading(true);
       const data = {
-        prompt: `I am building a "${projectName}" project. Come up with a set of development tasks needed to build this project. Provide the result strictly in the following JSON format:
+        prompt: `I am building a "${projectName}" project. Come up with a set of detailed development tasks needed to build this project. Provide the result strictly in the following JSON format:
         {
          project : ${projectName},
          description : ${description},
