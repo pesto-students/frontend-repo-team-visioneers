@@ -12,7 +12,6 @@ import MenuItem from "@mui/material/MenuItem";
 import Popover from "@mui/material/Popover";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import LogoImage from "../assets/TaskWiseLogo.png";
-import ProfileImage from "../assets/sample-pi.png";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import LogoutModal from "./LogoutModal";
@@ -37,6 +36,9 @@ function Header({ isSmallScreen, toggleDrawer }) {
 
   const { status, loggedInUser } = useSelector((state) => state.user);
   const userId = useSelector((state) => state.user.loggedInUser?.user?._id);
+  const userImage = useSelector(
+    (state) => state.user.loggedInUser?.user?.imgUrl
+  );
   const unreadNotifications = useSelector(
     (state) => state.notification.unreadNotifications
   );
@@ -158,7 +160,7 @@ function Header({ isSmallScreen, toggleDrawer }) {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                 <Avatar
                   alt="Profile Image"
-                  src={ProfileImage}
+                  src={userImage}
                   sx={{
                     width: { xs: 15, md: 20, lg: 25, xl: 30 },
                     height: { xs: 15, md: 20, lg: 25, xl: 30 },
