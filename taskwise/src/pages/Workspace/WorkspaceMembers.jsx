@@ -59,7 +59,7 @@ function WorkspaceMembers({ height, width}) {
           <ListItemAvatar>
             <Avatar alt={member.user.name} src={member.user.imgUrl} />
           </ListItemAvatar>
-          <ListItemText primary={member.user.email} />
+          <ListItemText primary={member.user.email} sx={{pr: 1}}/>
         </ListItem>
       ))}
     </List>

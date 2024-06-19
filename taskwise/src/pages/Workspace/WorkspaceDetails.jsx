@@ -1,10 +1,10 @@
 // WorkspaceDetails.js
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Box, Paper, Typography, InputBase, Divider, Tabs, Tab, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
-import AddIcon from '@mui/icons-material/Add';
+import Stack from "@mui/material/Stack";
 import Modal from "@mui/material/Modal";
 import WorkspaceTasks from './WorkspaceTasks';
 import WorkspaceSettings from './WorkspaceSettings';
@@ -49,14 +49,10 @@ const Search = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   backgroundColor: "#f0f0f0",
   marginLeft: 0,
-  width: '200px',
+  width: '120px',
   height: '30px',
   display: 'flex',
   alignItems: 'center',
-  transition: theme.transitions.create('width'),
-  '&:focus-within': {
-    width: '300px',
-  },
 }));
 
 const CustomBox = styled(Box)(({ theme }) => ({
@@ -136,6 +132,12 @@ function WorkspaceDetails() {
     setSelectedTab(0); // Change to "Projects" tab after creating a project
   };
 
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/createai");
+  };
+
   if (!workspace) {
     return <Loading/>;
   }
@@ -156,7 +158,7 @@ function WorkspaceDetails() {
         elevation={3}
         sx={{
           width: '100%',
-          height: 120,
+          height: 'auto',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -173,28 +175,64 @@ function WorkspaceDetails() {
                   Workspace / <strong>Details</strong>
                 </Typography>
                 <Box>
-                  <Typography gutterBottom variant="h6" component="div" sx={{ fontSize: '1rem' }}>
+                  <Typography gutterBottom variant="h6" component="div" sx={{ fontSize: '1rem', wordWrap: 'break-word' }}>
                     {workspace.name}
                   </Typography>
                 </Box>
               </Box>
             </Box>
           </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', pr: 2, p: 2 }}>
-            {selectedTab === 0 && (
-              <Search sx={{ mb: 1 }}>
+          <Stack
+            spacing={{ xs: 1, md: 2 }}
+            direction={{ xs: 'column', md: 'row' }}
+            alignItems={{ xs: 'flex-start', md: 'center' }}
+            justifyContent="space-between"
+            sx={{ px: 2, py: 1 }}
+          >
+          {selectedTab === 0 && (
+            <Box width={{ xs: '100%', md: 'auto' }} mt={{ xs: 1, md: 0 }}>
+              <Search>
                 <SearchIconWrapper>
                   <SearchIcon sx={{ color: 'gray' }} />
                 </SearchIconWrapper>
                 <StyledInputBase
-                    placeholder="Search projects…"
-                    inputProps={{ 'aria-label': 'search' }}
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                  />
+                  placeholder="projects…"
+                  inputProps={{ 'aria-label': 'search' }}
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                />
               </Search>
-            )}
-          </Box>
+            </Box>
+          )}
+          <Button
+            variant="contained"
+            size="small"
+            sx={{
+              fontSize: { xs: "0.65rem", md: "0.70rem" },
+              padding: { xs: "4px 6px", md: "4px 8px" },
+              backgroundColor: "#00c6ff",
+              backgroundImage: "linear-gradient(120deg, #00c6ff, #8e71df)",
+              color: "#fff",
+              width: { xs: '100%', md: 'auto' },
+              mb: { xs: 1, md: 0 }, // Margin bottom for responsive layout
+            }}
+            onClick={handleButtonClick}
+          >
+            Create with AI
+          </Button>
+          <Button
+            variant="contained"
+            size="small"
+            sx={{
+              fontSize: { xs: "0.65rem", md: "0.70rem" },
+              padding: { xs: "4px 6px", md: "4px 8px" },
+              width: { xs: '100%', md: 'auto' },
+            }}
+            onClick={handleOpenModal}
+          >
+            New Project
+          </Button>
+        </Stack>
         </Box>
         <Divider />
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
@@ -221,14 +259,6 @@ function WorkspaceDetails() {
               }
             />
           </Tabs>
-          <Button
-              variant="contained"
-              startIcon={<AddIcon />}
-              sx={{ fontSize: '0.70rem', padding: '4px 8px', mr: 2 }}
-              onClick={handleOpenModal}
-            >
-              New Project
-            </Button>
         </Box>
       </Paper>
       <CustomBox>
