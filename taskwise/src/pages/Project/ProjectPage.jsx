@@ -133,6 +133,7 @@ function ProjectPage() {
         },
       }}
     >
+      {(projectData.length <= 0 && projectFetchStatus === "fulfilled") &&
       <Paper
         elevation={3}
         sx={{
@@ -192,7 +193,7 @@ function ProjectPage() {
             />
           </Search>
         </Box>
-      </Paper>
+      </Paper>}
       {(projectData.length <= 0 && projectFetchStatus === "fulfilled") ? (
         <Box
           sx={{
