@@ -29,8 +29,8 @@ function WorkspaceCard({ workspace, onClick }) {
             />
           </Grid>
           <Grid item sx={{paddingTop: 2}}>
-            <Typography gutterBottom variant="h6" component="div" sx={{ fontSize: '1rem' }}>
-              {workspace.name}
+            <Typography gutterBottom variant="h6" component="div" sx={{ fontSize: '1rem', wordWrap: 'break-word' }}>
+                {workspace.name}
             </Typography>
           </Grid>
         </Grid>

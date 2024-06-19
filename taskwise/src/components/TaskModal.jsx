@@ -86,7 +86,10 @@ const TaskModal = ({ open, handleClose, task }) => {
           border: "1px solid #ccc",
           boxShadow: 24,
           borderRadius: 2,
-          p: 4,
+          pl: 4,
+          pt: 4,
+          pb: 4,
+          pr: 8,
         }}
       >
         <Box
@@ -99,7 +102,11 @@ const TaskModal = ({ open, handleClose, task }) => {
         >
           <div style={{ display: "flex", alignItems: "center" }}>
             <div
-              style={{ display: "flex", alignItems: "center", marginRight: "10px" }}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginRight: "10px",
+              }}
             >
               <img
                 src={WorkspaceIconBlack}
@@ -126,9 +133,7 @@ const TaskModal = ({ open, handleClose, task }) => {
           </IconButton>
         </Box>
         <Typography variant="subtitle1" sx={{ mb: 2 }}>
-          <strong>
-            {task?.name}
-          </strong>
+          <strong>{task?.name}</strong>
         </Typography>
         <Grid container spacing={1} sx={{ mb: 0 }}>
           <Grid item xs={6} sx={{ mb: 0 }}>

@@ -82,9 +82,9 @@ const TaskDetailsPage = () => {
   const userId = useSelector((state) => state?.user?.loggedInUser?.user);
   const taskData = selectedProject ? selectedProject.tasks : [];
   const membersData = useSelector((state) => state?.project?.workspaceMembers?.data);
-  console.log(membersData, "members in task details")
+  //console.log(membersData, "members in task details")
   const filteredTask = taskData?.find((eachData) => eachData?._id === taskID);
-  console.log(filteredTask, "filteredTask");
+  //console.log(filteredTask, "filteredTask");
   const [currentComment, setCurrentComment] = useState('');
   const handleAddNewComment = (event) => {
     const newComment = event.target.value;
@@ -94,7 +94,7 @@ const TaskDetailsPage = () => {
   const isCreator = userId?.email === filteredTask?.createdBy?.email ? true : false;
   const users = membersData?.map(item => item?.user);
   const [options] = useState(users);
-  console.log(options, "options")
+  //console.log(options, "options")
   const fileInputRef = useRef(null);
   const [files, setFiles] = useState([]);
   const [uploadedFileUrls, setUploadedFileUrls] = useState([]);
@@ -249,7 +249,7 @@ const TaskDetailsPage = () => {
 
 
   const handleItemClick = (option) => {
-    console.log(isAdmin)
+    //console.log(isAdmin)
     if (isAdmin || isCreator) {
       const name = "assigneeUserID"
       const value = option
