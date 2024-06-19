@@ -133,7 +133,7 @@ function ProjectPage() {
         },
       }}
     >
-      {(projectData?.length > 0 && projectFetchStatus === "fulfilled") &&
+      {(projectData?.length > 0 ) &&
       <Paper
         elevation={3}
         sx={{
