@@ -25,7 +25,6 @@ const CalendarView = () => {
     setSelectedTask(event);
   };
 
-  // Function to get priority color based on priority level
   const getPriorityColor = (priority) => {
     switch (priority) {
       case "High":
@@ -39,7 +38,6 @@ const CalendarView = () => {
     }
   };
 
-  // Map tasks data into events format expected by react-big-calendar
   const mappedEvents = events.map((task) => ({
     id: task.id,
     name: task.name,
@@ -49,8 +47,8 @@ const CalendarView = () => {
     workspace: task.workspace,
     dueDate: task.dueDate,
     priority: task.priority,
-    start: new Date(task.dueDate), // Convert dueDate to Date object
-    end: new Date(task.dueDate), // For simplicity, set end to start date
+    start: new Date(task.dueDate),
+    end: new Date(task.dueDate),
     description: task.content,
     attachments: task.attachments,
     createdBy: task.createdBy,
@@ -58,7 +56,6 @@ const CalendarView = () => {
     comments: task.comments,
   }));
 
-  // Function to provide custom styles to each event
   const eventStyleGetter = (event, start, end, isSelected) => {
     const backgroundColor = getPriorityColor(event.priority);
 
@@ -77,11 +74,24 @@ const CalendarView = () => {
     };
   };
 
+  const Event = ({ event }) => (
+    <div className="rbc-event-content">
+      <span
+        onClick={(e) => {
+          e.stopPropagation(); // Stop the event from propagating to the calendar cell
+          handleSelectEvent(event);
+        }}
+      >
+        {event.title}
+      </span>
+    </div>
+  );
+
   return (
     <div style={{ height: 500 }}>
       <Calendar
         localizer={localizer}
-        events={mappedEvents} // Use mappedEvents instead of original events
+        events={mappedEvents}
         startAccessor="start"
         endAccessor="end"
         style={{ margin: 'auto' }}
@@ -89,7 +99,8 @@ const CalendarView = () => {
         selectable
         eventPropGetter={eventStyleGetter}
         components={{
-          toolbar: CustomToolbar, // Use the custom toolbar
+          toolbar: CustomToolbar,
+          event: Event, // Use the custom Event component
           eventWrapper: ({ event, children }) => {
             const tasksOnDate = events.filter(
               (e) =>
