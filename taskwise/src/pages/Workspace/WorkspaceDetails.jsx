@@ -61,21 +61,21 @@ const Search = styled('div')(({ theme }) => ({
 const CustomBox = styled(Box)(({ theme }) => ({
   width: '100%',
   height: 'calc(100vh - 160px)',
-  overflowY: 'auto',
   padding: theme.spacing(2),
-  '&::-webkit-scrollbar': {
-    width: '8px',
-  },
-  '&::-webkit-scrollbar-thumb': {
-    backgroundColor: '#888',
-    borderRadius: '4px',
-  },
-  '&::-webkit-scrollbar-thumb:hover': {
-    backgroundColor: '#555',
-  },
-  '-ms-overflow-style': 'none',
-  'scrollbar-width': 'thin',
-  'scrollbar-color': '#888 #e0e0e0',
+  // overflowY: 'auto',
+  // '&::-webkit-scrollbar': {
+  //   width: '8px',
+  // },
+  // '&::-webkit-scrollbar-thumb': {
+  //   backgroundColor: '#888',
+  //   borderRadius: '4px',
+  // },
+  // '&::-webkit-scrollbar-thumb:hover': {
+  //   backgroundColor: '#555',
+  // },
+  // '-ms-overflow-style': 'none',
+  // 'scrollbar-width': 'thin',
+  // 'scrollbar-color': '#888 #e0e0e0',
 }));
 
 const NoWorkspacesMessage = styled('div')(({ theme }) => ({
