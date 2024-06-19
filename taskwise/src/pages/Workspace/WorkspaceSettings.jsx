@@ -35,8 +35,6 @@ import AddedMembersModal from './Models/AddedMembersModal';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   height: '400px',
-  width: '94%',
-  padding: theme.spacing(2),
   borderRadius: 2,
 }));
 
@@ -58,7 +56,7 @@ function WorkspaceSettings({ workspaceId }) {
   const [workspaceText, setWorkspaceText] = useState(workspace.name);
   const [isEditing, setIsEditing] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
-  const [dialogTitle, setDialogTitle] = useState("Media and Docs");
+  const [dialogTitle, setDialogTitle] = useState('');
   const [dialogTab, setDialogTab] = useState(0);
   const [mediaImages, setMediaImages] = useState([]);
   const [docs, setDocs] = useState([]);
@@ -187,8 +185,8 @@ function WorkspaceSettings({ workspaceId }) {
     <Grid container spacing={2}>
       <ToastContainer />
       <Grid item xs={12} md={6}>
-        <StyledPaper>
-          <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '30px' }}>
+        <StyledPaper elevation={3}>
+          <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '30px', p: 1 }}>
             <Tooltip title={isAdmin ? "click to update image" : ""}>
               <div>
                 <Thumbnail
@@ -211,7 +209,7 @@ function WorkspaceSettings({ workspaceId }) {
             )}
           </Box>
 
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', p: 1 }}>
             {isEditing ? (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <TextField
@@ -243,7 +241,7 @@ function WorkspaceSettings({ workspaceId }) {
               </React.Fragment>
             )}
           </Box>
-          <Box sx={{ mt: 2, display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ mt: 2, display: 'flex', alignItems: 'center', p: 2 }}>
             <Typography sx={{ fontSize: 15, fontWeight: 'bold' }}>
               Media and Docs
             </Typography>
@@ -254,7 +252,7 @@ function WorkspaceSettings({ workspaceId }) {
         </StyledPaper>
       </Grid>
       <Grid item xs={12} md={6}>
-        <StyledPaper>
+        <StyledPaper elevation={3}>
           {isAdmin && (
             <>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -262,7 +260,7 @@ function WorkspaceSettings({ workspaceId }) {
                   <IconButton color="primary">
                     <PersonAddAltSharpIcon sx={{ color: "#000000" }} />
                   </IconButton>
-                  <Typography sx={{ paddingTop: 0.5, paddingLeft: 1, fontSize: 15, fontWeight: 'bold', cursor: 'pointer' }}>
+                  <Typography sx={{ fontSize: 15, fontWeight: 'bold', cursor: 'pointer' }}>
                     Add Member
                   </Typography>
                 </ButtonBase>
@@ -272,7 +270,7 @@ function WorkspaceSettings({ workspaceId }) {
                   <IconButton>
                     <LinkSharpIcon sx={{ color: "#000000", fontSize: 25, transform: 'rotate(135deg)' }} />
                   </IconButton>
-                  <Typography sx={{ paddingBottom: 0.2, paddingLeft: 1, fontSize: 15, fontWeight: 'bold', cursor: 'pointer' }}>
+                  <Typography sx={{ fontSize: 15, fontWeight: 'bold', cursor: 'pointer' }}>
                     Invite to workspace via link
                   </Typography>
                 </ButtonBase>
@@ -282,12 +280,12 @@ function WorkspaceSettings({ workspaceId }) {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <WorkspaceSettingsMembers membersData={membersData} workspaceId={workspace.id} />
           </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', marginTop: 6 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', marginTop: 2 }}>
           <ButtonBase onClick={handleOpenExitModal} sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} disabled={isExitButtonDisabled}>
             <IconButton>
               <LogoutIcon sx={{ fontSize: 30, color: "#000000" }} />
             </IconButton>
-            <Typography sx={{ paddingBottom: 0.2, paddingLeft: 1, fontSize: 15, fontWeight: 'bold', cursor: 'pointer' }}>
+            <Typography sx={{ fontSize: 15, fontWeight: 'bold', cursor: 'pointer' }}>
               Exit Workspace
             </Typography>
           </ButtonBase>
