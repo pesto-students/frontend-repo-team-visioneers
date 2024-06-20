@@ -128,7 +128,14 @@ const TaskModal = ({ open, handleClose, task }) => {
               </Typography>
             </div>
           </div>
-          <IconButton onClick={handleClose}>
+          <IconButton
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              top: 8,
+              right: 8,
+            }}
+          >
             <CloseIcon />
           </IconButton>
         </Box>

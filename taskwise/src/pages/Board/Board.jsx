@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { DndProvider} from "react-dnd";
+import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import Column from "./Column";
 import { useState } from "react";
@@ -12,12 +12,16 @@ import Divider from "@mui/material/Divider";
 import { Button } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { fetchProjectByIdAsync, resetTaskAddStatus, moveTaskAsync, resetColumnAddStatus, fetchWorkspaceMembersAsync } from "../../features/project/projectSlice";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import {
+  fetchProjectByIdAsync,
+  resetTaskAddStatus,
+  moveTaskAsync,
+  // resetColumnAddStatus,
+  fetchWorkspaceMembersAsync,
+} from "../../features/project/projectSlice";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import AddColumnModal from "./AddColumnModal";
-
-
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -62,28 +66,39 @@ function Board() {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
 
- 
- 
   const initialData = useSelector((state) => state?.project?.selectedProject);
-  const columnAddStatus = useSelector((state)=>state.project?.columnAddStatus)
-  const taskAddStatus = useSelector((state) => state.project?.taskAddStatus);
-    // eslint-disable-next-line
-  const projectFetchStatus = useSelector((state) => state.project?.projectFetchStatus);
-  const workspaceId=useSelector((state) => state?.project?.selectedProject?.workspaceId);
-  // eslint-disable-next-line
-  const columnMovedStatus=useSelector((state)=>state?.project?.columnorderChangeStatus);
 
-  const [order, setOrder] = useState(null)
-  const [dataTask, setDataTask] = useState(null)
+  // eslint-disable-next-line
+  const columnAddStatus = useSelector(
+    (state) => state.project?.columnAddStatus
+  );
+  const taskAddStatus = useSelector((state) => state.project?.taskAddStatus);
+  // eslint-disable-next-line
+  const projectFetchStatus = useSelector(
+    (state) => state.project?.projectFetchStatus
+  );
+  const workspaceId = useSelector(
+    (state) => state?.project?.selectedProject?.workspaceId
+  );
+  // eslint-disable-next-line
+  const columnMovedStatus = useSelector(
+    (state) => state?.project?.columnorderChangeStatus
+  );
+
+  const [order, setOrder] = useState(null);
+  const [dataTask, setDataTask] = useState(null);
   const handleClick = () => {
     navigate(`/projects/${id}/new-task`);
   };
 
-
-  let user=useSelector((state)=>state?.user?.loggedInUser?.user);
-  let workspaceMembers=useSelector((state)=>state?.project?.workspaceMembers?.data)
+  let user = useSelector((state) => state?.user?.loggedInUser?.user);
+  let workspaceMembers = useSelector(
+    (state) => state?.project?.workspaceMembers?.data
+  );
   // eslint-disable-next-line
-  const isAdmin = workspaceMembers?.find((member) => member.user.email === user.email)?.role === 'Admin';
+  const isAdmin =
+    workspaceMembers?.find((member) => member.user.email === user.email)
+      ?.role === "Admin";
   const [columns, setColumns] = useState({});
   const [isAddColumnModalOpen, setIsAddColumnModalOpen] = useState(false);
   const handleOpenAddColumnModal = () => {
@@ -94,29 +109,26 @@ function Board() {
     setIsAddColumnModalOpen(false);
   };
 
-
-
   useEffect(() => {
     if (id) {
       dispatch(fetchProjectByIdAsync(id));
     }
-    if(workspaceId){
-      dispatch(fetchWorkspaceMembersAsync(workspaceId))
+    if (workspaceId) {
+      dispatch(fetchWorkspaceMembersAsync(workspaceId));
     }
-      // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [workspaceId, id]);
 
-
-  useEffect(()=>{
-    if(columnAddStatus==="fulfilled"){
-      toast.success("Column added successfully!");
-    }
-    if(columnAddStatus==="rejected"){
-      toast.error("Column not added!");
-    }
-    dispatch(resetColumnAddStatus())
-    // eslint-disable-next-line
-  },[columnAddStatus,dispatch])
+  // useEffect(()=>{
+  //   if(columnAddStatus==="fulfilled"){
+  //     toast.success("Column added successfully!");
+  //   }
+  //   if(columnAddStatus==="rejected"){
+  //     toast.error("Column not added!");
+  //   }
+  //   dispatch(resetColumnAddStatus())
+  //   // eslint-disable-next-line
+  // },[columnAddStatus,dispatch])
   // useEffect(()=>{
   //   if(columnMovedStatus==="fulfilled"){
   //     toast.success("Column moved successfully!");
@@ -142,8 +154,8 @@ function Board() {
       setOrder(initialData?.order);
       setDataTask(initialData?.tasks);
     }
-      // eslint-disable-next-line
-  }, [initialData,taskAddStatus,dispatch]);
+    // eslint-disable-next-line
+  }, [initialData, taskAddStatus, dispatch]);
 
   const handleDrop = (taskId, newColumnId) => {
     // Clone the columns state
@@ -176,9 +188,9 @@ function Board() {
     }
     //console.log(previousColumn._id, "previouscolumn")
     const data = {
-      "sourceColumnId": previousColumn._id,
-      "destinationColumnId": newColumnId
-    }
+      sourceColumnId: previousColumn._id,
+      destinationColumnId: newColumnId,
+    };
     const idObject = { id: id, taskId };
     dispatch(moveTaskAsync({ data, idObject }));
 
@@ -208,8 +220,6 @@ function Board() {
     setSearchTerm(event.target.value);
   };
 
-
-
   return (
     <DndProvider backend={HTML5Backend}>
       <Box
@@ -228,7 +238,7 @@ function Board() {
           elevation={3}
           sx={{
             height: 120,
-            maxWidth: "100%"
+            maxWidth: "100%",
           }}
         >
           <Box
@@ -329,37 +339,56 @@ function Board() {
                 Add new task
               </Button>
             </Stack>
-
           </Box>
         </Paper>
-        <Box sx={{
-          display: 'flex',
-          overflow: 'auto',
-          width: '100%',
-          maxWidth: '1600px',
-          padding: 2,
-          '&::-webkit-scrollbar': {
-            display: 'none',
-          },
-        }}>
-          <Grid container spacing={2} direction="row" wrap="nowrap" sx={{ marginTopt: "3" }} alignItems="flex-start">
+        <Box
+          sx={{
+            display: "flex",
+            overflow: "auto",
+            width: "100%",
+            maxWidth: "1600px",
+            padding: 2,
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+          }}
+        >
+          <Grid
+            container
+            spacing={2}
+            direction="row"
+            wrap="nowrap"
+            sx={{ marginTopt: "3" }}
+            alignItems="flex-start"
+          >
             {order?.map((columnId) => {
               const column = columns?.find((col) => col._id === columnId);
-              const tasks = column?.taskIds?.map((taskId) => {
-                const task = dataTask?.find((task) => task._id === taskId);
-                if (!task) {
-                  console.warn(`Task with ID ${taskId} not found`);
-                }
-                return task;
-              }).filter(Boolean);
+              const tasks = column?.taskIds
+                ?.map((taskId) => {
+                  const task = dataTask?.find((task) => task._id === taskId);
+                  if (!task) {
+                    console.warn(`Task with ID ${taskId} not found`);
+                  }
+                  return task;
+                })
+                .filter(Boolean);
               //console.log(column, tasks)
-              const filteredTasks = tasks?.filter(task => 
-                (task.content && task.content.toLowerCase().includes(searchTerm.toLowerCase())) || 
-                (task.title && task.title.toLowerCase().includes(searchTerm.toLowerCase()))
+              const filteredTasks = tasks?.filter(
+                (task) =>
+                  (task.content &&
+                    task.content
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase())) ||
+                  (task.title &&
+                    task.title.toLowerCase().includes(searchTerm.toLowerCase()))
               );
               return (
                 <Grid key={column?.id}>
-                  <Column column={column} tasks={filteredTasks} onDrop={handleDrop} />
+                  <Column
+                    column={column}
+                    tasks={filteredTasks}
+                    onDrop={handleDrop}
+                  />
                 </Grid>
               );
             })}
@@ -372,7 +401,6 @@ function Board() {
         //onAddColumn={handleAddColumn}
         id={id}
       />
-
     </DndProvider>
   );
 }

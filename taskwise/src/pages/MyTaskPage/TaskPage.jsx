@@ -6,11 +6,11 @@ import "@ag-grid-community/styles/ag-theme-alpine.css";
 import { ModuleRegistry } from "@ag-grid-community/core";
 import { ClientSideRowModelModule } from "@ag-grid-community/client-side-row-model";
 import { styled } from "@mui/material/styles";
-import { format } from 'date-fns';
-import FlagIcon from '@mui/icons-material/Flag';
-import { fetchTasksByUserIDAsync } from '../../features/workspace/workspaceSlice';
+import { format } from "date-fns";
+import FlagIcon from "@mui/icons-material/Flag";
+import { fetchTasksByUserIDAsync } from "../../features/workspace/workspaceSlice";
 import TaskModal from "../../components/TaskModal";
-import Loading from '../../components/Loading';
+import Loading from "../../components/Loading";
 
 // Register the necessary modules with AG Grid
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
@@ -37,21 +37,21 @@ const NoTasksMessage = styled("div")(({ theme }) => ({
 
 // Custom function to format date into a readable format
 const formatDate = (dateString) => {
-  if (!dateString) return '';
+  if (!dateString) return "";
   const date = new Date(dateString);
-  return format(date, 'dd MMM yy');
+  return format(date, "dd MMM yy");
 };
 
 // Custom cell renderer for priority column
 const priorityRenderer = (params) => {
   const priority = params.value;
   switch (priority) {
-    case 'High':
-      return <FlagIcon style={{ color: 'red' }} />;
-    case 'Medium':
-      return <FlagIcon style={{ color: 'yellow' }} />;
-    case 'Low':
-      return <FlagIcon style={{ color: 'green' }} />;
+    case "High":
+      return <FlagIcon style={{ color: "red" }} />;
+    case "Medium":
+      return <FlagIcon style={{ color: "yellow" }} />;
+    case "Low":
+      return <FlagIcon style={{ color: "green" }} />;
     default:
       return null;
   }
@@ -61,7 +61,9 @@ const TaskPage = () => {
   // eslint-disable-next-line
   const tasksData = useSelector((state) => state.workspace.userTasks) || [];
   const userId = useSelector((state) => state?.user?.loggedInUser?.user?._id);
-  const fetchTasksByUserIDStatus = useSelector((state) => state.workspace.fetchTasksByUserIDStatus);
+  const fetchTasksByUserIDStatus = useSelector(
+    (state) => state.workspace.fetchTasksByUserIDStatus
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -80,45 +82,53 @@ const TaskPage = () => {
   }, [tasksData]);
 
   // Define the column definitions to match the structure of the tasks data
-  const colDefs = useMemo(() => [
-    {
-      field: "name",
-      headerName: "Task",
-      flex: 1,
-      sortable: true,
-      filter: "agTextColumnFilter",
-    },
-    {
-      field: "dueDate",
-      headerName: "Due Date",
-      flex: 1,
-      sortable: true,
-      filter: "agTextColumnFilter",
-      valueFormatter: (params) => formatDate(params.value), // Use a custom formatter function
-    },
-    {
-      field: "priority",
-      headerName: "Priority",
-      flex: 1,
-      sortable: true,
-      filter: "agTextColumnFilter",
-      cellRenderer: "priorityRenderer", // Use a custom cell renderer for priority column
-    },
-    {
-      field: "project",
-      headerName: "Project",
-      flex: 1,
-      sortable: true,
-      filter: "agTextColumnFilter",
-    },
-    {
-      field: "workspace",
-      headerName: "Workspace",
-      flex: 1,
-      sortable: true,
-      filter: "agTextColumnFilter",
-    },
-  ], []);
+  const colDefs = useMemo(
+    () => [
+      {
+        field: "name",
+        headerName: "Task",
+        flex: 1,
+        sortable: true,
+        filter: "agTextColumnFilter",
+        cellStyle: { cursor: "pointer" }, // Set cursor pointer for Task column
+      },
+      {
+        field: "dueDate",
+        headerName: "Due Date",
+        flex: 1,
+        sortable: true,
+        filter: "agTextColumnFilter",
+        valueFormatter: (params) => formatDate(params.value), // Use a custom formatter function
+        cellStyle: { cursor: "pointer" }, // Set cursor pointer for Task column
+      },
+      {
+        field: "priority",
+        headerName: "Priority",
+        flex: 1,
+        sortable: true,
+        filter: "agTextColumnFilter",
+        cellRenderer: "priorityRenderer", // Use a custom cell renderer for priority column
+        cellStyle: { cursor: "pointer" }, // Set cursor pointer for Task column
+      },
+      {
+        field: "project",
+        headerName: "Project",
+        flex: 1,
+        sortable: true,
+        filter: "agTextColumnFilter",
+        cellStyle: { cursor: "pointer" }, // Set cursor pointer for Task column
+      },
+      {
+        field: "workspace",
+        headerName: "Workspace",
+        flex: 1,
+        sortable: true,
+        filter: "agTextColumnFilter",
+        cellStyle: { cursor: "pointer" }, // Set cursor pointer for Task column
+      },
+    ],
+    []
+  );
 
   // State to track selected task and modal visibility
   const [selectedTask, setSelectedTask] = useState(null);
@@ -135,19 +145,22 @@ const TaskPage = () => {
   };
 
   // Default column properties
-  const defaultColDef = useMemo(() => ({
-    filter: true,
-    floatingFilter: true,
-    resizable: true,
-    minWidth: 100,
-  }), []);
+  const defaultColDef = useMemo(
+    () => ({
+      filter: true,
+      floatingFilter: true,
+      resizable: true,
+      minWidth: 100,
+    }),
+    []
+  );
 
   // Show loading indicator while fetching tasks
-  if (fetchTasksByUserIDStatus === 'loading') {
+  if (fetchTasksByUserIDStatus === "loading") {
     return (
       <StyledAgGridContainer>
         <div className="ag-theme-alpine" style={gridStyle}>
-          <Loading/>
+          <Loading />
         </div>
       </StyledAgGridContainer>
     );
@@ -168,7 +181,9 @@ const TaskPage = () => {
           />
         </div>
       ) : (
-        <NoTasksMessage>There are no tasks on your list at this moment</NoTasksMessage>
+        <NoTasksMessage>
+          There are no tasks on your list at this moment
+        </NoTasksMessage>
       )}
       {/* Render the task detail modal */}
       {selectedTask && (
