@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "react-big-calendar": "^1.13.0"
+  }
+}
