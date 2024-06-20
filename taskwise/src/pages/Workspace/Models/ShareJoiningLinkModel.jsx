@@ -1,58 +1,60 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Typography, Button, IconButton, Modal, Divider } from '@mui/material';
+import { Box, Typography, Button, IconButton, Modal, Divider, useMediaQuery, useTheme } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import TelegramIcon from '@mui/icons-material/Telegram';
 import LinkSharpIcon from '@mui/icons-material/LinkSharp';
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'white',
-  boxShadow: 24,
-  borderRadius: 4,
-  p: 3,
-};
-
 const ShareJoiningLinkModal = ({ handleClose }) => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: isSmallScreen ? '90%' : 400,
+    maxWidth: '90%',
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    borderRadius: 4,
+    p: 3,
+  };
+
   const handleCopy = () => {
-    // Logic to copy the link
+    const linkToCopy = 'https://lighthearted-lily-f405ec.netlify.app/signup'; // Replace with your actual link
+    navigator.clipboard.writeText(linkToCopy)
+      .then(() => {
+        console.log('Link copied to clipboard');
+        // Optionally you can add a success message or state update here
+      })
+      .catch((error) => {
+        console.error('Error copying link to clipboard: ', error);
+        // Handle error, perhaps by showing an error message to the user
+      });
   };
 
   return (
     <Modal open onClose={handleClose}>
-      <Box sx={style}>
+      <Box sx={modalStyle}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
           <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'center', flexGrow: 1 }}>
             Share Joining Link
           </Typography>
-          <IconButton onClick={handleClose}>
+          <IconButton onClick={handleClose} aria-label="close">
             <CloseIcon />
           </IconButton>
         </Box>
-        <Typography variant="body1" sx={{ mb: 2 }}>
-          Share this link via:
-        </Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-          <FacebookIcon sx={{ mr: 1, color: '#3b5998', fontSize: 30 }} />
-          <WhatsAppIcon sx={{ mr: 1, color: '#25D366', fontSize: 30 }} />
-          <TelegramIcon sx={{ mr: 1, color: '#0088cc', fontSize: 30 }} />
-        </Box>
         <Divider sx={{ my: 2 }} />
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <LinkSharpIcon sx={{ mr: 1, transform: 'rotate(135deg)', fontSize: 30 }} />
-          <Typography variant="body2" sx={{ fontSize: 14, color: 'gray', flexGrow: 1 }}>
-            https://dev--devtaskwisefrontend.netlify.app
+        <Box sx={{ display: 'flex', flexDirection: isSmallScreen ? 'column' : 'row', alignItems: 'center' }}>
+          <LinkSharpIcon sx={{ mr: isSmallScreen ? 0 : 1, mb: isSmallScreen ? 1 : 0, transform: 'rotate(135deg)', fontSize: 30 }} />
+          <Typography variant="body2" sx={{ fontSize: 14, color: 'text.secondary', flexGrow: 1, mb: isSmallScreen ? 1 : 0 }}>
+            https://taskwiseai.netlify.app/signup
           </Typography>
-          <Button 
+          <Button
             variant="contained"
             color="primary"
-            sx={{ ml: 1, textTransform: 'none' }}
+            sx={{ ml: isSmallScreen ? 0 : 1, mt: isSmallScreen ? 1 : 0, textTransform: 'none' }}
             onClick={handleCopy}
           >
             Copy

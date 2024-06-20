@@ -123,7 +123,7 @@ function TaskList() {
 
   const handleCreateProjectButtonClick = async () => {
     const response = await dispatch(
-      getImageUrlAsync("1717579493959-projectimages.jpg")
+      getImageUrlAsync("1718641051530-ai-default.jpg")
     );
     let finalImageUrl = response?.payload?.presignedUrl;
     let finalImageKey = response?.payload?.imgKey;
