@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import TaskCard from "./TaskCard";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import "./TaskList.css";
@@ -41,6 +41,7 @@ const CustomBox = styled(Box)(({ theme }) => ({
 }));
 
 function TaskList() {
+  const theme = useTheme();
   const [currentPage, setCurrentPage] = useState(0);
   const [tasks, setTasks] = useState([]);
   const navigate = useNavigate();
@@ -153,7 +154,13 @@ function TaskList() {
         alignItems: "center",
         "& > :not(style)": {
           m: 1,
-          width: "100%",
+          width: "98%",
+          [theme.breakpoints.down("sm")]: {
+            maxWidth: "auto",
+          },
+          [theme.breakpoints.down("md")]: {
+            maxWidth: "auto",
+          },
         },
       }}
     >
@@ -222,6 +229,32 @@ function TaskList() {
               <BsChevronRight className="arrow-icon" />
             </Button>
           </Box>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              mt: {
+                xs: 5, // Small screens (e.g., mobile)
+                sm: 6, // Small to medium screens
+                md: 10, // Medium to large screens
+                lg: 15, // Large screens
+              },
+            }}
+          >
+            <Typography
+              sx={{
+                width: "100%",
+                textAlign: "center",
+                backgroundColor: "#f5f5f5",
+                borderRadius: 1,
+                padding: theme.spacing(1),
+                fontSize: "1.5rem",
+              }}
+            >
+              Feel free to edit the tasks to your liking!
+            </Typography>
+          </Box>
         </CustomBox>
       </Paper>
       <Box
@@ -252,7 +285,7 @@ function TaskList() {
           variant="contained"
           className="corner-btn generate-board-btn"
           sx={{
-            marginRight: "8px",
+            marginRight: "0.5px",
             fontWeight: "bold",
             right: "0",
             borderRadius: "16px",
