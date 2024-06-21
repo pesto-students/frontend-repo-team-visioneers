@@ -134,7 +134,7 @@ const Notifications = () => {
       });
   }, [dispatch, handleMenuClose, selectedNotification]);
 
-  const deleteNotification = () => {};
+  // const deleteNotification = () => {};
 
   return (
     <Box width="400px" bgcolor="#fff" border="1px solid #ccc">
@@ -193,7 +193,7 @@ const Notifications = () => {
         }}
       >
         <MenuItem onClick={markAsRead}>Mark As Read</MenuItem>
-        <MenuItem onClick={deleteNotification}>Delete</MenuItem>
+        {/* <MenuItem onClick={deleteNotification}>Delete</MenuItem> */}
       </Menu>
       {/* <Divider style={{ margin: 0 }} />
       <SeeAllNotifications>See All Notifications</SeeAllNotifications> */}
