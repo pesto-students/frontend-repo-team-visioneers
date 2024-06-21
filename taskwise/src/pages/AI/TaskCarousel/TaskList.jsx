@@ -238,7 +238,7 @@ function TaskList() {
                 xs: 5, // Small screens (e.g., mobile)
                 sm: 6, // Small to medium screens
                 md: 10, // Medium to large screens
-                lg: 15, // Large screens
+                lg: 28, // Large screens
               },
             }}
           >
