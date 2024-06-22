@@ -56,6 +56,7 @@ const TaskModal = ({ open, handleClose, task }) => {
 
       dispatch(editTaskAsync({ data, idObject }));
       setCurrentComment("");
+      handleClose();  // Close the modal after posting the comment
     } else {
       toast.info("No changes to save.");
     }
