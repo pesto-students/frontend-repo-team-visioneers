@@ -14,11 +14,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import {
   fetchProjectByIdAsync,
-  resetTaskAddStatus,
+  // resetTaskAddStatus,
   moveTaskAsync,
   // resetColumnAddStatus,
   fetchWorkspaceMembersAsync,
 } from "../../features/project/projectSlice";
+//eslint-disable-next-line
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AddColumnModal from "./AddColumnModal";
@@ -141,14 +142,14 @@ function Board() {
   // },[columnMovedStatus,dispatch])
 
   useEffect(() => {
-    if (taskAddStatus === "fulfilled") {
-      toast.success("Task added successfully!");
-      dispatch(resetTaskAddStatus());
-    }
-    if (taskAddStatus === "rejected") {
-      toast.error("Failed to add task.");
-      dispatch(resetTaskAddStatus());
-    }
+    // if (taskAddStatus === "fulfilled") {
+    //   toast.success("Task added successfully!");
+    //   dispatch(resetTaskAddStatus());
+    // }
+    // if (taskAddStatus === "rejected") {
+    //   toast.error("Failed to add task.");
+    //   dispatch(resetTaskAddStatus());
+    // }
     if (initialData) {
       setColumns(initialData?.columns);
       setOrder(initialData?.order);
