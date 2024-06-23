@@ -90,7 +90,7 @@ const ChangePasswordModal = ({
 
     const apiUrl =
       process.env.NODE_ENV === "production"
-        ? "https://taskwise-backend.onrender.com/api/auth/changepassword"
+        ? "https://backend-repo-team-visioneers.onrender.com/api/auth/changepassword"
         : "http://localhost:8080/api/auth/changepassword";
 
     try {
